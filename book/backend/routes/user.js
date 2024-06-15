@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const User = require("../modeles/user");
 const bcrypt = require("bcryptjs");  // for encripting password
-const jwt = require("jsonwebtoken")
+// const jwt = require("jsonwebtoken")
 // Sign up
 router.post("/sign-up", async (req, res) => {
     try {
@@ -57,9 +57,9 @@ router.post("/sign-in", async (req, res) => {
         }
     await bcrypt.compare(password,existingUser.password,(err,data)=>{
         if(data){
-            const token=jwt.sign({authClalms},"bookStore123",
-                {expiresIn:"30d"
-                    });
+            // const token=jwt.sign({authClalms},"bookStore123",
+            //     {expiresIn:"30d"
+            //         });
             res.status(200).json({message:"SignIn successfully"})
 
         }
