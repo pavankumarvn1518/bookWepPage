@@ -33,6 +33,13 @@ const userSchema = new mongoose.Schema(
                 ref: "Book",
             },
         ],
+        cart: [
+            {
+                type: mongoose.Types.ObjectId,
+                ref:"Book",
+            },
+
+        ],
         orders: [
             {
                 type: mongoose.Schema.Types.ObjectId,
