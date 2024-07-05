@@ -26,9 +26,9 @@ app.use("/api/v1", Order);
 
 
 // Test route for root URL
-app.get("/", (req, res) => {
-    res.send("Server is running!");
-});
+// app.get("/", (req, res) => {
+//     res.send("Server is running!");
+// });
 
 const port = process.env.PORT || 1000;
 

@@ -7,7 +7,7 @@ const User = require("../modeles/user")
 router.post("/place-order", authenticateToken, async (req, res) =>{
     try{
         const { id } = req.headers;
-        const { order } = req.body;
+        const  {order}  = req.body;
 
         for (const orderData of order){
             const newOrder = new Order({ user: id, book: orderData._id});
@@ -31,6 +31,7 @@ router.post("/place-order", authenticateToken, async (req, res) =>{
          return res.status(500).json({ message:"An error occured"});
     }
 });
+
 router.get("/get-order-history", authenticateToken, async (req,res) =>{
     try{
         const { id } = req.headers;
