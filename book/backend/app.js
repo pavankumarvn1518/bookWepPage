@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 require("dotenv").config();
 require("./conn/conn");
+
 const User = require("./routes/user");
 const Books = require("./routes/book");
 const Favourite = require("./routes/favourite");
@@ -10,6 +12,15 @@ const Order = require("./routes/order");
 
 
 
+
+
+
+// app.use(cors({
+//   origin: 'http://localhost:5173', // Adjust this based on your frontend URL
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   credentials: true,
+// }));
+app.use(cors());
 
 // Middleware to parse JSON bodies
 app.use(express.json());
